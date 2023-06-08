@@ -1,0 +1,1 @@
+https://www.figma.com/file/g605HpU9AH7c3tGY0b30Ea/D%C3%B6k-App?type=design&node-id=0%3A1&t=xTqbt2Vc7zKlBQRt-1
