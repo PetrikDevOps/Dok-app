@@ -10,11 +10,13 @@ let loginPage = () => {
             alignItems: 'center',
             paddingHorizontal: 20,
             justifyContent: 'center',
+            width: '100vw',
+            height: '100vh',
         },
         logoContainer: {
             alignItems: 'center',
             marginBottom: 10,
-            marginTop: 20,
+            marginTop: '-12vh',
         },
         logo: {
             fontSize: 32,
@@ -23,6 +25,7 @@ let loginPage = () => {
         },
         line: {
             width: '100%',
+            marginBottom: '5vh',
             height: 1,
             backgroundColor: '#474747',
             marginVertical: 20,
@@ -53,7 +56,7 @@ let loginPage = () => {
             backgroundColor: '#7BB49F',
             alignItems: 'center',
             justifyContent: 'center',
-            marginTop: 10,
+            marginTop: '15vh',
             marginBottom: 15,
             borderRadius: 5,
         },
