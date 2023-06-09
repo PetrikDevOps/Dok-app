@@ -1,10 +1,12 @@
 import React from 'react';
-import loginPage from './pages/login';
+import LoginPage from './pages/login';
 
 const App = () => {
   return (
-    <div>{loginPage(styles)}</div>
-  )
+    <div>
+      <LoginPage />
+    </div>
+  );
 };
 
 export default App;
