@@ -13,8 +13,8 @@ let loginPage = () => {
         },
         logoContainer: {
             alignItems: 'center',
-            marginBottom: 30,
-            marginTop: 30,
+            marginBottom: 10,
+            marginTop: 20,
         },
         logo: {
             fontSize: 32,
@@ -28,8 +28,10 @@ let loginPage = () => {
             marginVertical: 20,
         },
         inputContainer: {
+
             width: '100%',
-            marginBottom: 20,
+            marginTop: 20,
+            marginBottom: 10,
         },
         label: {
             fontSize: 16,
@@ -51,6 +53,7 @@ let loginPage = () => {
             backgroundColor: '#7BB49F',
             alignItems: 'center',
             justifyContent: 'center',
+            marginTop: 10,
             marginBottom: 15,
             borderRadius: 5,
         },
