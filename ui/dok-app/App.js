@@ -4,12 +4,16 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, Linking } from 're
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>DÖK App</Text>
+      <View style={styles.logoContainer}>
+        <Text style={styles.logo}>DÖK App</Text>
+      </View>
       <View style={styles.line} />
-      <Text style={styles.label}>name</Text>
-      <TextInput style={styles.input} />
-      <Text style={styles.label}>password</Text>
-      <TextInput secureTextEntry={true} style={styles.input} />
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>name</Text>
+        <TextInput style={styles.input} />
+        <Text style={styles.label}>password</Text>
+        <TextInput secureTextEntry={true} style={styles.input} />
+      </View>
       <TouchableOpacity style={styles.loginButton}>
         <Text style={styles.loginButtonText}>login</Text>
       </TouchableOpacity>
@@ -26,20 +30,27 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1E1E1E',
     alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: 20,
-    borderRadius: 10,
+    justifyContent: 'center',
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 30,
+    marginTop: 30,
   },
   logo: {
     fontSize: 32,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginBottom: 10,
   },
   line: {
     width: '100%',
     height: 1,
     backgroundColor: '#474747',
+    marginVertical: 20,
+  },
+  inputContainer: {
+    width: '100%',
     marginBottom: 20,
   },
   label: {
