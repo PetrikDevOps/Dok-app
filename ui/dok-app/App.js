@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, Linking } from 're
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>Dök App</Text>
+      <Text style={styles.logo}>DÖK App</Text>
       <View style={styles.line} />
       <Text style={styles.label}>name</Text>
       <TextInput style={styles.input} />
