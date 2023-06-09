@@ -16,6 +16,7 @@ const App = () => {
       <TouchableOpacity onPress={() => Linking.openURL('https://lobotomy.store')} style={styles.signupLink}>
         <Text style={styles.signupLinkText}>Don't have an account?</Text>
       </TouchableOpacity>
+      <View style={styles.line} />
     </View>
   );
 };
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   line: {
     width: '100%',
     height: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#474747',
     marginBottom: 20,
   },
   label: {
@@ -76,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#7BB49F',
     textDecorationLine: 'underline',
+    marginBottom: 10,
   },
 });
 
