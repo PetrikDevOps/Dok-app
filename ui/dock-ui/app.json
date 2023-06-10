@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "dok-app",
-    "slug": "dok-app",
+    "name": "dock-ui",
+    "slug": "dock-ui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
