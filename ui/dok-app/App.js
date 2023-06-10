@@ -1,11 +1,11 @@
 import React from 'react';
-import LoginPage from './pages/login';
+import btn from './comp/btn.js';
 
 const App = () => {
   return (
     <div>
-      <LoginPage />
-    </div>
+      {btn()}
+    </div >
   );
 };
 
