@@ -1,5 +1,4 @@
 import { View, StyleSheet, Text, TouchableOpacity, Linking, Image } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
 
 let loginPage = () => {
     const styles = StyleSheet.create({
