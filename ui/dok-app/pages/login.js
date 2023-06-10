@@ -1,5 +1,4 @@
 import { View, StyleSheet, Text, TouchableOpacity, Linking, Image } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
 
 let loginPage = () => {
     const styles = StyleSheet.create({
@@ -54,7 +53,6 @@ let loginPage = () => {
             </View>
             <View style={styles.line} />
             <TouchableOpacity style={styles.loginButton}>
-                <FontAwesome name="microsoft" size={24} color="#1E1E1E" />
                 <Text style={styles.loginButtonText}>Login with Microsoft</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Linking.openURL('https://lobotomy.store')}>
