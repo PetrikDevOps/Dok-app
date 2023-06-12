@@ -42,7 +42,7 @@ let profilePage = () => {
         },
         taskButton: {
             width: '100%',
-            height: 100,
+            height: 75,
             backgroundColor: 'rgba(121, 126, 120, 0.7)',
             alignItems: 'center',
             justifyContent: 'center',
@@ -59,7 +59,6 @@ let profilePage = () => {
         },
         taskText: {
             fontSize: 32,
-            fontWeight: 'bold',
             color: '#D9D9D9',
             marginLeft: 10,
         },
