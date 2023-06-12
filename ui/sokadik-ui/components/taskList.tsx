@@ -1,5 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import taskListElement from './taskListElement';
+
 
 const taskList = () => {
     const elements = [
@@ -43,13 +45,14 @@ const taskList = () => {
         // Add more elements as needed
     ];
 
+    let elementList = elements.map((element) => {
+        return taskListElement(element.text);
+    }
+    );
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            {elements.map((element) => (
-                <View key={element.id} style={styles.listItem}>
-                    <Text>{element.text}</Text>
-                </View>
-            ))}
+            {elementList}
         </ScrollView>
     );
 };

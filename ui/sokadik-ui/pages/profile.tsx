@@ -41,17 +41,7 @@ let profilePage = () => {
             borderRadius: 5,
             flexDirection: 'row',
         },
-        taskButton: {
-            width: '100%',
-            height: 75,
-            backgroundColor: 'rgba(121, 126, 120, 0.7)',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginTop: 25,
-            marginBottom: 25,
-            borderRadius: 5,
-            flexDirection: 'row',
-        },
+
         suggestionButton: {
             width: '100%',
             height: 50,
@@ -74,11 +64,7 @@ let profilePage = () => {
             color: '#000000',
             marginLeft: 10,
         },
-        taskText: {
-            fontSize: 32,
-            color: '#D9D9D9',
-            marginLeft: 10,
-        },
+
         userContainer: {
             width: '100%',
             display: 'flex',
@@ -100,16 +86,13 @@ let profilePage = () => {
             </View>
             <View style={styles.line} />
             <Text style={styles.big}>Feladataid</Text>
-            <View style={styles.taskButton}>
-                <Text style={styles.taskText}>Petrik Nap Sakk</Text>
-            </View>
+            {taskList()}
             <View style={styles.line} />
             <Text style={styles.big}>Javaslat</Text>
             <View style={styles.suggestionButton}>
                 <Text style={styles.suggestionText}>Van egy Tippem</Text>
             </View>
             <View style={styles.line} />
-            {taskList()}
         </View>
     );
 };
