@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, TouchableOpacity, Linking, Image } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Linking, Pressable } from 'react-native';
 
 let loginPage = () => {
     const styles = StyleSheet.create({
@@ -52,11 +52,9 @@ let loginPage = () => {
                 <Text style={styles.logo}>DÖK App</Text>
             </View>
             <View style={styles.line} />
-            <TouchableOpacity style={styles.loginButton}>
+            <Pressable style={styles.loginButton}>
                 <Text style={styles.loginButtonText}>Login with Microsoft</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('https://lobotomy.store')}>
-            </TouchableOpacity>
+            </Pressable>
             <View style={styles.line} />
         </View>
     );

@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 import taskList from '../components/taskList';
 
 let profilePage = () => {
@@ -82,17 +82,17 @@ let profilePage = () => {
                 <Text style={styles.small}>lvl 1 döckös</Text>
             </View>
             <View style={styles.line} />
-            <View style={styles.battlepassButton}>
+            <Pressable style={styles.battlepassButton}>
                 <Text style={styles.battlepassText}>Battle Pass</Text>
-            </View>
+            </Pressable>
             <View style={styles.line} />
             <Text style={styles.big}>Feladataid</Text>
             {taskList()}
             <View style={styles.line} />
             <Text style={styles.big}>Javaslat</Text>
-            <View style={styles.suggestionButton}>
+            <Pressable style={styles.suggestionButton}>
                 <Text style={styles.suggestionText}>Van egy Tippem</Text>
-            </View>
+            </Pressable>
             <View style={styles.line} />
         </View>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 
 const taskListElement = (text: string) => {
     const styles = StyleSheet.create({
@@ -23,9 +23,9 @@ const taskListElement = (text: string) => {
     });
 
     return (
-        <View style={styles.taskButton}>
+        <Pressable style={styles.taskButton}>
             <Text style={styles.taskText}>{text}</Text>
-        </View>
+        </Pressable>
     );
 };
 
