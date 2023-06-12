@@ -1,4 +1,5 @@
-import { View, StyleSheet, Text, TouchableOpacity, Linking, Image } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
+import taskList from '../components/taskList';
 
 let profilePage = () => {
     const styles = StyleSheet.create({
@@ -107,6 +108,8 @@ let profilePage = () => {
             <View style={styles.suggestionButton}>
                 <Text style={styles.suggestionText}>Van egy Tippem</Text>
             </View>
+            <View style={styles.line} />
+            {taskList()}
         </View>
     );
 };
