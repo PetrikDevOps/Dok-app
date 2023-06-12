@@ -7,7 +7,7 @@ let profilePage = () => {
             backgroundColor: '#1E1E1E',
             justifyContent: 'flex-start',
             paddingHorizontal: 20,
-            height: '100vh',
+            minHeight: '100vh',
             width: '100vw',
         },
         logoContainer: {
@@ -54,7 +54,7 @@ let profilePage = () => {
         suggestionButton: {
             width: '100%',
             height: 50,
-            backgroundColor: 'rgba(121, 126, 120, 0.7)',
+            backgroundColor: '#7BB49F',
             alignItems: 'center',
             justifyContent: 'center',
             marginTop: 25,
@@ -66,6 +66,11 @@ let profilePage = () => {
             fontSize: 32,
             fontWeight: 'bold',
             color: '#1E1E1E',
+            marginLeft: 10,
+        },
+        suggestionText: {
+            fontSize: 28,
+            color: '#000000',
             marginLeft: 10,
         },
         taskText: {
@@ -100,7 +105,7 @@ let profilePage = () => {
             <View style={styles.line} />
             <Text style={styles.big}>Javaslat</Text>
             <View style={styles.suggestionButton}>
-                <Text style={styles.taskText}>Van egy Tippem</Text>
+                <Text style={styles.suggestionText}>Van egy Tippem</Text>
             </View>
         </View>
     );
