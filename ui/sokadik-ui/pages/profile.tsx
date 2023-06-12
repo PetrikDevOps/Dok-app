@@ -51,6 +51,17 @@ let profilePage = () => {
             borderRadius: 5,
             flexDirection: 'row',
         },
+        suggestionButton: {
+            width: '100%',
+            height: 50,
+            backgroundColor: 'rgba(121, 126, 120, 0.7)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: 25,
+            marginBottom: 25,
+            borderRadius: 5,
+            flexDirection: 'row',
+        },
         battlepassText: {
             fontSize: 32,
             fontWeight: 'bold',
@@ -85,6 +96,11 @@ let profilePage = () => {
             <Text style={styles.big}>Feladataid</Text>
             <View style={styles.taskButton}>
                 <Text style={styles.taskText}>Petrik Nap Sakk</Text>
+            </View>
+            <View style={styles.line} />
+            <Text style={styles.big}>Javaslat</Text>
+            <View style={styles.suggestionButton}>
+                <Text style={styles.taskText}>Van egy Tippem</Text>
             </View>
         </View>
     );
