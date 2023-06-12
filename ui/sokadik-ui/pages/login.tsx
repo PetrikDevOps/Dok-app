@@ -27,10 +27,6 @@ let loginPage = () => {
             backgroundColor: '#474747',
             marginVertical: 20,
         },
-        userInfoContainer: {
-            display: flex,
-            flexDirection: 'row',
-        },
         loginButton: {
             width: '100%',
             height: 50,
@@ -52,7 +48,15 @@ let loginPage = () => {
 
     return (
         <View style={styles.container}>
-
+            <View style={styles.logoContainer}>
+                <Text style={styles.logo}>DÖK App</Text>
+            </View>
+            <View style={styles.line} />
+            <TouchableOpacity style={styles.loginButton}>
+                <Text style={styles.loginButtonText}>Login with Microsoft</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('https://lobotomy.store')}>
+            </TouchableOpacity>
             <View style={styles.line} />
         </View>
     );

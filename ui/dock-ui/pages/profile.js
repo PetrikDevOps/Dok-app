@@ -2,6 +2,11 @@ import { View, StyleSheet, Text, TouchableOpacity, Linking, Image } from 'react-
 
 let profilePage = () => {
     const styles = StyleSheet.create({
+        View: {
+            borderColor: 'red',
+            borderRadius: '1px',
+            borderStyle: 'solid',
+        },
         container: {
             flex: 1,
             backgroundColor: '#1E1E1E',
@@ -44,12 +49,18 @@ let profilePage = () => {
             color: '#1E1E1E',
             marginLeft: 10,
         },
+        userDataContainer: {
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            textAlign: 'center',
+        },
     });
 
     return (
         <View style={styles.container}>
-            <View style={styles.logoContainer}>
-                <Text style={styles.logo}>DÖK App</Text>
+            <View style={styles.userDataContainer}>
+                <Text style={styles.logo}>Gipsz Jakab Jákob</Text>
             </View>
             <View style={styles.line} />
             <TouchableOpacity style={styles.loginButton}>
