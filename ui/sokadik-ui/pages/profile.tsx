@@ -23,6 +23,7 @@ let profilePage = () => {
         big: {
             fontSize: 32,
             color: '#FFFFFF',
+            marginBottom: 10,
         },
         line: {
             width: '100%',
