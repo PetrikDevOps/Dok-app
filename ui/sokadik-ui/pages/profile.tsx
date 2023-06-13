@@ -3,6 +3,11 @@ import taskList from '../components/taskList';
 
 let profilePage = () => {
     const styles = StyleSheet.create({
+        centerList: {
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+        },
         container: {
             flex: 1,
             backgroundColor: '#1E1E1E',
@@ -87,7 +92,9 @@ let profilePage = () => {
             </Pressable>
             <View style={styles.line} />
             <Text style={styles.big}>Feladataid</Text>
-            {taskList()}
+            <View style={styles.centerList}>
+                {taskList()}
+            </View>
             <View style={styles.line} />
             <Text style={styles.big}>Javaslat</Text>
             <Pressable style={styles.suggestionButton}>

@@ -6,10 +6,13 @@ import taskListElement from './taskListElement';
 const taskList = () => {
     const styles = StyleSheet.create({
         container: {
+            paddingTop: '30vh',
             width: '100vw',
             height: 300,
             display: 'flex',
             justifyContent: 'center',
+            alignItems: 'center',
+
         },
 
     });

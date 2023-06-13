@@ -4,12 +4,11 @@ import { View, StyleSheet, Text, Pressable } from 'react-native';
 const taskListElement = (text: string) => {
     const styles = StyleSheet.create({
         taskButton: {
-
             width: '80vw',
             height: 75,
             backgroundColor: 'rgba(121, 126, 120, 0.7)',
-            alignItems: 'center',
             justifyContent: 'center',
+            alignItems: 'center',
             marginTop: 10,
             marginBottom: 2,
             borderRadius: 5,
