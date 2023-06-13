@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 
 const taskListElement = (text: string) => {
     const styles = StyleSheet.create({
@@ -22,10 +22,14 @@ const taskListElement = (text: string) => {
     });
 
     return (
+<<<<<<< HEAD
 
         <View style={styles.taskButton}>
+=======
+        <Pressable style={styles.taskButton}>
+>>>>>>> refs/remotes/origin/main
             <Text style={styles.taskText}>{text}</Text>
-        </View>
+        </Pressable>
     );
 };
 
