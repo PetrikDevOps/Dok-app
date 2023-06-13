@@ -22,12 +22,7 @@ const taskListElement = (text: string) => {
     });
 
     return (
-<<<<<<< HEAD
-
-        <View style={styles.taskButton}>
-=======
         <Pressable style={styles.taskButton}>
->>>>>>> refs/remotes/origin/main
             <Text style={styles.taskText}>{text}</Text>
         </Pressable>
     );
