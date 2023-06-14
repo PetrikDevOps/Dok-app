@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:user/pages/profile/profile.dart';
 
 void main() {
   runApp(const App());
@@ -100,6 +101,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       tabBuilder: (context, i) {
+        // TODO: Create a function for returning correct page according to the value of `i`
         return CupertinoPageScaffold(
           // navigationBar: CupertinoNavigationBar(
           //   middle: Text(getTabName(i)),
@@ -110,13 +112,14 @@ class HomeScreen extends StatelessWidget {
                 largeTitle: Text(getTabName(i)),
               ),
             ],
-            body: Center(
-              child: Text(
-                'This is tab #$i',
-                style:
-                    CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
-              ),
-            ),
+            body: getTabContent(i)
+            // Center(
+            //   child: Text(
+            //     'This is tab #$i',
+            //     style:
+            //         CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+            //   ),
+            // ),
           ),
         );
       },
@@ -131,5 +134,13 @@ String getTabName(int i) {
     return 'News';
   } else {
     return 'Profile';
+  }
+}
+
+Widget getTabContent(int i) {
+  if (i == 2) {
+    return Profile();
+  } else {
+    return Text('Hello');
   }
 }
