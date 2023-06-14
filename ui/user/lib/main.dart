@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:user/pages/home/home.dart';
 import 'package:user/pages/news/news.dart';
 import 'package:user/pages/profile/profile.dart';
 
@@ -109,7 +110,7 @@ class HomeScreen extends StatelessWidget {
         switch (i) {
           case 0:
             return CupertinoTabView(
-              builder: (context) => Profile(),
+              builder: (context) => Home(),
             );
           case 1:
             return CupertinoTabView(
