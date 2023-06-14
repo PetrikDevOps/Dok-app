@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:user/pages/profile/tasks.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -11,7 +12,6 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      
       child: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           CupertinoSliverNavigationBar(
@@ -20,15 +20,19 @@ class _ProfileState extends State<Profile> {
         ],
         body: CupertinoListSection.insetGrouped(
           header: const Text('Quick Actions'),
-          children: const [
+          children: [
             CupertinoListTile.notched(
-                trailing: CupertinoListTileChevron(),
-                title: Text('tasks'),
-                leading: Icon(CupertinoIcons.checkmark_alt_circle)),
+              onTap: () => Navigator.push(
+                  context, CupertinoPageRoute(builder: (context) => Tasks())),
+              trailing: CupertinoListTileChevron(),
+              title: Text('tasks'),
+              leading: Icon(CupertinoIcons.check_mark_circled),
+            ),
             CupertinoListTile.notched(
               title: Text('logout'),
               leading: Icon(
                 CupertinoIcons.arrow_left,
+                color: CupertinoColors.systemRed,
               ),
             ),
           ],

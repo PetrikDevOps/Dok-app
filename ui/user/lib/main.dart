@@ -95,11 +95,12 @@ class HomeScreen extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.news),
+            icon: Icon(CupertinoIcons.news_solid),
             label: 'News'
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.profile_circled),
+            icon: Icon(CupertinoIcons.person),
+            label: 'Profile',
           ),
         ],
       ),
