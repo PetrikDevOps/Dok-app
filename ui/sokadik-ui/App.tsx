@@ -1,11 +1,11 @@
-import kerdesPage from './pages/kerdesek';
-import navbar from './components/navbar';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import AppRouter from './comp/appRout';
 
-export default function App() {
-  return (
-    <div>
-      {navbar()}
-      {kerdesPage()}
-    </div>
-  );
+function App() {
+  // Az alkalmazásod komponensei
 }
+
+const rootElement = document.getElementById('root');
+
+ReactDOM.createRoot(rootElement).render(<App />);

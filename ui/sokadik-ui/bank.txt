@@ -1,26 +1,26 @@
-1. Csoportmunka: Az alábbiak közül mire használható a MS Teams? (2 helyes válasz van)
-Válasz: Lehetőségek jó válaszhoz: munkaterület a valós idejű együttműködéshez, kommunikációhoz, értekezletekhez, fájlmegosztáshoz.
-2.Csoportmunka: Melyik Git parancs segítségével hozhatsz létre lokális repositoryt?
-Válasz: git init
-3. Csoportmunka: Melyik Git parancs segítségével könyvelhet el változásokat a kódbázison?
-Válasz: git commit
-4.Csoportmunka: Melyik Git parancs segítségével másolhat le egy komplett kódbázist egy távoli kódtárból?
-Válasz: git clone
-5. Csoportmunka: Melyik Git parancs segítségével töltheti fel a változásokat távoli kódtárba?
-Válasz: git push
-6. Csoportmunka: Melyik Git parancs segítségével tudod egy feature branch változásait alkalmazni a master branch-re?
-Válasz: git checkout master && git merge feature
-7. Csoportmunka: Mi a teendő merge conflict esetén?
-Válasz: El kell dönteni melyik változásokat tartjuk meg (javasolt a grafikus szerkesztő használata) és azután git add és git commit. ( Fontos hogy dokumentáljuk commit üzenetben mi történt pontosan.)
-8.Csoportmunka: Mikor jön létre merge conflict?
-Válasz: A merge conflict akkor jön létre, amikor két vagy több változtatást tartalmazó ágat (branch) próbálunk egyesíteni (merge) egy közös ősággal (common ancestor) rendelkező főágban (main branch). Amikor ketten vagy többen végeztek módosítást ugyanazon a kód részen, a kiindulás (ancestor) óta, és azt megpróbálják mergelni.
-9. Csoportmunka: Milyen funkciót látnak el a branch-ek?
-Válasz: A branch-ek olyan funkciókat látnak el, amelyek lehetővé teszik a fejlesztők számára, hogy párhuzamosan dolgozhassanak ugyanazon projekten, anélkül hogy a munkájuk egymásra hatna vagy összekeveredne.
-10.Csoportmunka: Milyen problémákat old meg a verziókezelés? (Kettő jó válasz van!)
-Válasz: Verzióellenőrzés, (kódbeli) Konfliktusok, Többágú (több emberes) fejlesztés -> kísérletezés, Hibajavítás
-11.. Elektronika: A NOT kapu minimálisan ennyi tranzisztor felhasználásával építhető meg:
-Válasz: 1 db
-12.Elektronika:............................................. félvezető eszköz, amelyet túlnyomórészt gyenge villamos jelek erősítésére, továbbá jelek kapcsolására vagy feszültségstabilizálás céljára alkalmaznak.
+1. Csoportmunka: Az alábbiak közül mire használható a MS Teams? (2 helyes válasz van)\
+Válasz: Lehetőségek jó válaszhoz: munkaterület a valós idejű együttműködéshez, kommunikációhoz, értekezletekhez, fájlmegosztáshoz.\
+2.Csoportmunka: Melyik Git parancs segítségével hozhatsz létre lokális repositoryt?\
+Válasz: git init\
+3. Csoportmunka: Melyik Git parancs segítségével könyvelhet el változásokat a kódbázison?\
+Válasz: git commit\
+4.Csoportmunka: Melyik Git parancs segítségével másolhat le egy komplett kódbázist egy távoli kódtárból?\
+Válasz: git clone\
+5. Csoportmunka: Melyik Git parancs segítségével töltheti fel a változásokat távoli kódtárba?\
+Válasz: git push\
+6. Csoportmunka: Melyik Git parancs segítségével tudod egy feature branch változásait alkalmazni a master branch-re?\
+Válasz: git checkout master && git merge feature\
+7. Csoportmunka: Mi a teendő merge conflict esetén?\
+Válasz: El kell dönteni melyik változásokat tartjuk meg (javasolt a grafikus szerkesztő használata) és azután git add és git commit. ( Fontos hogy dokumentáljuk commit üzenetben mi történt pontosan.)\
+8.Csoportmunka: Mikor jön létre merge conflict?\
+Válasz: A merge conflict akkor jön létre, amikor két vagy több változtatást tartalmazó ágat (branch) próbálunk egyesíteni (merge) egy közös ősággal (common ancestor) rendelkező főágban (main branch). Amikor ketten vagy többen végeztek módosítást ugyanazon a kód részen, a kiindulás (ancestor) óta, és azt megpróbálják mergelni.\
+9. Csoportmunka: Milyen funkciót látnak el a branch-ek?\
+Válasz: A branch-ek olyan funkciókat látnak el, amelyek lehetővé teszik a fejlesztők számára, hogy párhuzamosan dolgozhassanak ugyanazon projekten, anélkül hogy a munkájuk egymásra hatna vagy összekeveredne.\
+10.Csoportmunka: Milyen problémákat old meg a verziókezelés? (Kettő jó válasz van!)\
+Válasz: Verzióellenőrzés, (kódbeli) Konfliktusok, Többágú (több emberes) fejlesztés -> kísérletezés, Hibajavítás\
+11.. Elektronika: A NOT kapu minimálisan ennyi tranzisztor felhasználásával építhető meg:\
+Válasz: 1 db\
+12.Elektronika:............................................. félvezető eszköz, amelyet túlnyomórészt gyenge villamos jelek erősítésére, továbbá jelek kapcsolására vagy feszültségstabilizálás céljára alkalmaznak.\
 Válasz: Tranzisztor, esetleg MOSFET?
 13. Elektronika: A(z) ….. az az áramköri elem (alkatrész), amely villamos tér létrehozásával elektromos töltést képes tárolni.
 Válasz: Kondenzátor
