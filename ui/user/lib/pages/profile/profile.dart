@@ -10,20 +10,30 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return CupertinoListSection.insetGrouped(
-      header: Text('Quick Actions'),
-      children: const [
-        CupertinoListTile.notched(
-            trailing: const CupertinoListTileChevron(),
-            title: Text('tasks'),
-            leading: Icon(CupertinoIcons.checkmark_alt_circle)),
-        CupertinoListTile.notched(
-          title: Text('logout'),
-          leading: Icon(
-            CupertinoIcons.arrow_left,
+    return CupertinoPageScaffold(
+      
+      child: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          CupertinoSliverNavigationBar(
+            largeTitle: Text('Profile'),
           ),
+        ],
+        body: CupertinoListSection.insetGrouped(
+          header: const Text('Quick Actions'),
+          children: const [
+            CupertinoListTile.notched(
+                trailing: CupertinoListTileChevron(),
+                title: Text('tasks'),
+                leading: Icon(CupertinoIcons.checkmark_alt_circle)),
+            CupertinoListTile.notched(
+              title: Text('logout'),
+              leading: Icon(
+                CupertinoIcons.arrow_left,
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

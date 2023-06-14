@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:user/pages/news/news.dart';
 import 'package:user/pages/profile/profile.dart';
 
 void main() {
@@ -91,9 +92,11 @@ class HomeScreen extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.news),
+            label: 'News'
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.profile_circled),
@@ -102,45 +105,22 @@ class HomeScreen extends StatelessWidget {
       ),
       tabBuilder: (context, i) {
         // TODO: Create a function for returning correct page according to the value of `i`
-        return CupertinoPageScaffold(
-          // navigationBar: CupertinoNavigationBar(
-          //   middle: Text(getTabName(i)),
-          // ),
-          child: NestedScrollView(
-            headerSliverBuilder: (context, innerBoxIsScrolled) => [
-              CupertinoSliverNavigationBar(
-                largeTitle: Text(getTabName(i)),
-              ),
-            ],
-            body: getTabContent(i)
-            // Center(
-            //   child: Text(
-            //     'This is tab #$i',
-            //     style:
-            //         CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
-            //   ),
-            // ),
-          ),
-        );
+        switch (i) {
+          case 0:
+            return CupertinoTabView(
+              builder: (context) => Profile(),
+            );
+          case 1:
+            return CupertinoTabView(
+              builder: (context) => News(),
+            );
+          case 2:
+          default:
+            return CupertinoTabView(
+              builder: (context) => Profile(),
+            );
+        }
       },
     );
-  }
-}
-
-String getTabName(int i) {
-  if (i == 0) {
-    return 'Home';
-  } else if (i == 1) {
-    return 'News';
-  } else {
-    return 'Profile';
-  }
-}
-
-Widget getTabContent(int i) {
-  if (i == 2) {
-    return Profile();
-  } else {
-    return Text('Hello');
   }
 }
