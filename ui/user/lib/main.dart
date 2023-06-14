@@ -12,6 +12,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       home: LoginScreen(),
+      theme: CupertinoThemeData(
+        brightness: Brightness.dark,
+      ),
     );
   }
 }
@@ -56,15 +59,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     login();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    padding: EdgeInsets.all(16.0),
+                    backgroundColor: const Color.fromARGB(255, 41, 40, 40),
+                    padding: EdgeInsets.all(20.0),
                   ),
                   icon: Image.asset(
                     'assets/images/mc_icon.png',
                     width: 24,
                     height: 24,
                   ),
-                  label: const Text('Login with microsoft', style: TextStyle(color: Colors.black),)),
+                  label: const Text('Login with microsoft', style: TextStyle(color: Colors.white),)),
             ],
           ),
         ),
