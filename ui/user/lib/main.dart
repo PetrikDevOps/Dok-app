@@ -42,15 +42,15 @@ class _LoginScreenState extends State<LoginScreen> {
       return const HomeScreen();
     } else {
       return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: const Text('Login'),
-        ),
+        // navigationBar: CupertinoNavigationBar(
+        //   middle: const Text('Login'),
+        // ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Login Screen',
+                'Login',
                 style: TextStyle(fontSize: 24.0),
               ),
               const SizedBox(height: 24.0),
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 41, 40, 40),
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                   ),
                   icon: Image.asset(
                     'assets/images/mc_icon.png',
