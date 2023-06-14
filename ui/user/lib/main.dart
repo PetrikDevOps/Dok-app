@@ -14,6 +14,7 @@ class App extends StatelessWidget {
       home: LoginScreen(),
       theme: CupertinoThemeData(
         brightness: Brightness.dark,
+        primaryColor: Colors.greenAccent,
       ),
     );
   }
@@ -42,15 +43,15 @@ class _LoginScreenState extends State<LoginScreen> {
       return const HomeScreen();
     } else {
       return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: const Text('Login'),
-        ),
+        // navigationBar: CupertinoNavigationBar(
+        //   middle: const Text('Login'),
+        // ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Login Screen',
+                'Login',
                 style: TextStyle(fontSize: 24.0),
               ),
               const SizedBox(height: 24.0),
@@ -60,14 +61,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 41, 40, 40),
-                    padding: EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20.0),
                   ),
                   icon: Image.asset(
                     'assets/images/mc_icon.png',
                     width: 24,
                     height: 24,
                   ),
-                  label: const Text('Login with microsoft', style: TextStyle(color: Colors.white),)),
+                  label: const Text(
+                    'Login with microsoft',
+                    style: TextStyle(color: Colors.white),
+                  )),
             ],
           ),
         ),
@@ -97,14 +101,21 @@ class HomeScreen extends StatelessWidget {
       ),
       tabBuilder: (context, i) {
         return CupertinoPageScaffold(
-          navigationBar: CupertinoNavigationBar(
-            middle: Text(getTabName(i)),
-          ),
-          child: Center(
-            child: Text(
-              'This is tab #$i',
-              style:
-                  CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+          // navigationBar: CupertinoNavigationBar(
+          //   middle: Text(getTabName(i)),
+          // ),
+          child: NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) => [
+              CupertinoSliverNavigationBar(
+                largeTitle: Text(getTabName(i)),
+              ),
+            ],
+            body: Center(
+              child: Text(
+                'This is tab #$i',
+                style:
+                    CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+              ),
             ),
           ),
         );
