@@ -3,6 +3,7 @@
     "name": "sokadik-ui",
     "slug": "sokadik-ui",
     "version": "1.0.0",
+    "proxy": "http://localhost:8000",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
