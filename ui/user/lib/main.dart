@@ -14,6 +14,7 @@ class App extends StatelessWidget {
       home: LoginScreen(),
       theme: CupertinoThemeData(
         brightness: Brightness.dark,
+        primaryColor: Colors.greenAccent,
       ),
     );
   }
@@ -67,7 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 24,
                     height: 24,
                   ),
-                  label: const Text('Login with microsoft', style: TextStyle(color: Colors.white),)),
+                  label: const Text(
+                    'Login with microsoft',
+                    style: TextStyle(color: Colors.white),
+                  )),
             ],
           ),
         ),
@@ -97,14 +101,21 @@ class HomeScreen extends StatelessWidget {
       ),
       tabBuilder: (context, i) {
         return CupertinoPageScaffold(
-          navigationBar: CupertinoNavigationBar(
-            middle: Text(getTabName(i)),
-          ),
-          child: Center(
-            child: Text(
-              'This is tab #$i',
-              style:
-                  CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+          // navigationBar: CupertinoNavigationBar(
+          //   middle: Text(getTabName(i)),
+          // ),
+          child: NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) => [
+              CupertinoSliverNavigationBar(
+                largeTitle: Text(getTabName(i)),
+              ),
+            ],
+            body: Center(
+              child: Text(
+                'This is tab #$i',
+                style:
+                    CupertinoTheme.of(context).textTheme.navLargeTitleTextStyle,
+              ),
             ),
           ),
         );
