@@ -1,12 +1,11 @@
-import profilePage from './pages/profile';
-import votePage from './pages/vote';
-import loginPage from './pages/login';
-import voteAdminPage from './pages/voteAdmin';
+import kerdesPage from './pages/kerdesek';
+import navbar from './components/navbar';
 
 export default function App() {
   return (
     <div>
-      {voteAdminPage()}
+      {navbar()}
+      {kerdesPage()}
     </div>
   );
 }

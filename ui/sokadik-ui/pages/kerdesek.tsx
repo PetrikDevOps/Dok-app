@@ -1,7 +1,6 @@
 import { View, StyleSheet, Text, Pressable } from 'react-native';
-import taskList from '../components/taskList';
 
-let profilePage = () => {
+let kerdesPage = () => {
     const styles = StyleSheet.create({
         centerList: {
             width: '100vw',
@@ -78,31 +77,26 @@ let profilePage = () => {
             alignItems: 'flex-end',
             marginTop: 50,
         },
+        headcontainer: {
+            width: '100vw',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingHorizontal: 20,
+            height: 100,
+            backgroundColor: '#1E1E1E',
+        },
     });
 
     return (
         <View style={styles.container}>
-            <View style={styles.userContainer}>
-                <Text style={styles.big}>Gipsz Jakab Jákob</Text>
-                <Text style={styles.small}>lvl 1 döckös</Text>
-            </View>
-            <View style={styles.line} />
-            <Pressable style={styles.battlepassButton}>
-                <Text style={styles.battlepassText}>Battle Pass</Text>
-            </Pressable>
-            <View style={styles.line} />
-            <Text style={styles.big}>Feladataid</Text>
-            <View style={styles.centerList}>
-                {taskList()}
-            </View>
-            <View style={styles.line} />
-            <Text style={styles.big}>Javaslat</Text>
-            <Pressable style={styles.suggestionButton}>
-                <Text style={styles.suggestionText}>Van egy Tippem</Text>
-            </Pressable>
-            <View style={styles.line} />
-        </View>
+
+            < View style={styles.container} >
+                <View style={styles.line} />
+            </View >
+        </View >
     );
 };
 
-export default profilePage;
+export default kerdesPage;
