@@ -29,7 +29,11 @@ class NewsCard extends StatelessWidget {
               // #                                                                                            #
               // ###
               onPressed: () => Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Profile())),
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => const Profile(),
+                ),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -46,7 +50,7 @@ class NewsCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 12.0),
+                    const SizedBox(width: 12.0),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +65,7 @@ class NewsCard extends StatelessWidget {
                                   fontSize: 16.0,
                                 ),
                           ),
-                          SizedBox(height: 4.0),
+                          const SizedBox(height: 4.0),
                           Text(
                             description,
                             style:

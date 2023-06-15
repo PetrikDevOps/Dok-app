@@ -14,7 +14,7 @@ class _ProfileState extends State<Profile> {
     return CupertinoPageScaffold(
       child: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          CupertinoSliverNavigationBar(
+          const CupertinoSliverNavigationBar(
             largeTitle: Text('Profile'),
           ),
         ],
@@ -23,12 +23,12 @@ class _ProfileState extends State<Profile> {
           children: [
             CupertinoListTile.notched(
               onTap: () => Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Tasks())),
-              trailing: CupertinoListTileChevron(),
-              title: Text('tasks'),
-              leading: Icon(CupertinoIcons.check_mark_circled),
+                  context, CupertinoPageRoute(builder: (context) => const Tasks())),
+              trailing: const CupertinoListTileChevron(),
+              title: const Text('tasks'),
+              leading: const Icon(CupertinoIcons.check_mark_circled),
             ),
-            CupertinoListTile.notched(
+            const CupertinoListTile.notched(
               title: Text('logout'),
               leading: Icon(
                 CupertinoIcons.arrow_left,

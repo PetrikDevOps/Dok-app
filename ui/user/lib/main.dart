@@ -110,16 +110,16 @@ class HomeScreen extends StatelessWidget {
         switch (i) {
           case 0:
             return CupertinoTabView(
-              builder: (context) => Home(),
+              builder: (context) => const Home(),
             );
           case 1:
             return CupertinoTabView(
-              builder: (context) => News(),
+              builder: (context) => const News(),
             );
           case 2:
           default:
             return CupertinoTabView(
-              builder: (context) => Profile(),
+              builder: (context) => const Profile(),
             );
         }
       },

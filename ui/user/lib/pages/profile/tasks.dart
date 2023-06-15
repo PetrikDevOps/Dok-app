@@ -13,13 +13,13 @@ class _TasksState extends State<Tasks> {
     return CupertinoPageScaffold(
       child: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          CupertinoSliverNavigationBar(
+          const CupertinoSliverNavigationBar(
             largeTitle: Text('Tasks'),
           ),
         ],
         body: CupertinoListSection.insetGrouped(
-          header: Text('Your tasks'),
-          children: [
+          header: const Text('Your tasks'),
+          children: const [
             CupertinoListTile.notched(
               title: Text('Mosd el a tanyerokat XD'),
               trailing: CupertinoListTileChevron(),
