@@ -33,6 +33,13 @@ class _ProfileState extends State<Profile> {
               onTap: () => Navigator.push(
                   context, CupertinoPageRoute(builder: (context) => const Settings())),
               trailing: const CupertinoListTileChevron(),
+              title: const Text('help'),
+              leading: const Icon(CupertinoIcons.headphones , color: CupertinoColors.systemYellow,),
+            ),
+            CupertinoListTile.notched(
+              onTap: () => Navigator.push(
+                  context, CupertinoPageRoute(builder: (context) => const Settings())),
+              trailing: const CupertinoListTileChevron(),
               title: const Text('settings'),
               leading: const Icon(CupertinoIcons.gear, color: CupertinoColors.systemGrey4,),
             ),

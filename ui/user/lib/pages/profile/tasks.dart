@@ -15,6 +15,7 @@ class _TasksState extends State<Tasks> {
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           const CupertinoSliverNavigationBar(
             largeTitle: Text('Tasks'),
+            previousPageTitle: 'Profile',
           ),
         ],
         body: CupertinoListSection.insetGrouped(
