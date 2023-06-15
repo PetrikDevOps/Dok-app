@@ -14,7 +14,7 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
+      padding: const EdgeInsets.only(top: 20),
       child: Flex(
         direction: Axis.horizontal,
         children: [

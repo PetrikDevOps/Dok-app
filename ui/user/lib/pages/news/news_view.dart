@@ -10,6 +10,7 @@ class NewsView extends StatelessWidget {
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           const CupertinoSliverNavigationBar(
             largeTitle: Text('Gaming'),
+            previousPageTitle: 'News',
           ),
         ],
         body: const Text('This is gaming'),
