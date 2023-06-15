@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     login();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 41, 40, 40),
+                    backgroundColor: CupertinoColors.darkBackgroundGray,
                     padding: const EdgeInsets.all(20.0),
                   ),
                   icon: Image.asset(
