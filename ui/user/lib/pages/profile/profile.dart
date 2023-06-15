@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:user/pages/profile/settings.dart';
 import 'package:user/pages/profile/tasks.dart';
 
 class Profile extends StatefulWidget {
@@ -27,6 +28,13 @@ class _ProfileState extends State<Profile> {
               trailing: const CupertinoListTileChevron(),
               title: const Text('tasks'),
               leading: const Icon(CupertinoIcons.check_mark_circled),
+            ),
+            CupertinoListTile.notched(
+              onTap: () => Navigator.push(
+                  context, CupertinoPageRoute(builder: (context) => const Settings())),
+              trailing: const CupertinoListTileChevron(),
+              title: const Text('settings'),
+              leading: const Icon(CupertinoIcons.gear, color: CupertinoColors.systemGrey4,),
             ),
             const CupertinoListTile.notched(
               title: Text('logout'),
