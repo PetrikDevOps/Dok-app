@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:user/pages/profile/profile.dart';
+import 'package:user/pages/news/news_view.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard(
@@ -27,11 +27,11 @@ class NewsCard extends StatelessWidget {
               // #                                                                                            #
               // #  For now we just redirect to Profile but later we will redirect to the news details view.  #
               // #                                                                                            #
-              // ###
+              // ##############################################################################################
               onPressed: () => Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => const Profile(),
+                  builder: (context) => const NewsView(),
                 ),
               ),
               child: Padding(
@@ -76,6 +76,7 @@ class NewsCard extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const CupertinoListTileChevron()
                   ],
                 ),
               ),
