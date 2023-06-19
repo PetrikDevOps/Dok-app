@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:user/auth.dart';
 import 'package:user/pages/home/home.dart';
 import 'package:user/pages/news/news.dart';
 import 'package:user/pages/profile/profile.dart';
@@ -60,7 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 24.0),
               ElevatedButton.icon(
                   onPressed: () {
-                    login();
+                    Navigator.push(context, CupertinoPageRoute(builder: (context) => const LoginWebViewScaffold()));
+                    //login();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: CupertinoColors.darkBackgroundGray,
