@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:user/auth.dart';
@@ -60,9 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 24.0),
               ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => const LoginWebViewScaffold()));
-                    //login();
+                  onPressed: () async {
+                    String loginUrl = await getLoginUrl();
+                    Navigator.push(context, CupertinoPageRoute(builder: (context) => LoginWebViewScaffold(uri: loginUrl)));
+                    login();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: CupertinoColors.darkBackgroundGray,

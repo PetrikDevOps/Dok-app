@@ -1,13 +1,27 @@
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/cupertino.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 // Open a web view to login.
-String login() {
-  return 'Utalom a feher embereket baszod!';
+Future<String> getLoginUrl() async {
+  try {
+    final response = await http.post(Uri.parse('http://10.0.2.2:5000/login'));
+
+    if (response.statusCode == 200) {
+      return response.body;
+    } else {
+      return 'Request failed with status: ${response.statusCode}';
+    }
+  } catch (e) {
+    return 'Error: $e';
+  }
 }
 
 class LoginWebView extends StatefulWidget {
-  const LoginWebView({super.key});
+  final String uri;
+
+  const LoginWebView({super.key, required this.uri});
 
   @override
   State<LoginWebView> createState() => _LoginWebViewState();
@@ -36,13 +50,16 @@ class _LoginWebViewState extends State<LoginWebView> {
             },
           ),
         )
-        ..loadRequest(Uri.parse('https://flutter.dev')),
+        ..loadRequest(Uri.parse(widget.uri)),
     );
   }
 }
 
 class LoginWebViewScaffold extends StatefulWidget {
-  const LoginWebViewScaffold({super.key});
+  // TODO: THIS IS REALLY STUPID WE PASS TROUGH TWO WIDGETS UNIFY EM!
+  final String uri;
+
+  const LoginWebViewScaffold({super.key, required this.uri});
 
   @override
   State<LoginWebViewScaffold> createState() => _LoginWebViewScaffoldState();
@@ -56,7 +73,7 @@ class _LoginWebViewScaffoldState extends State<LoginWebViewScaffold> {
         direction: Axis.vertical,
         children: [
           Expanded(
-            child: LoginWebView(),
+            child: LoginWebView(uri: widget.uri,),
           ),
         ],
       ),
