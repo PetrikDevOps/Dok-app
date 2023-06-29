@@ -1,10 +1,13 @@
+// Import http for requests
 import 'package:http/http.dart' as http;
 
+// Import Cupertino for the widgets and webview for opening the login page provided by the backend.
 import 'package:flutter/cupertino.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 // Open a web view to login.
 Future<String> getLoginUrl() async {
+  // Attempt to get a login url from the backend.
   try {
     final response = await http.post(Uri.parse('http://10.0.2.2:5000/login'));
 
@@ -57,6 +60,7 @@ class _LoginWebViewState extends State<LoginWebView> {
 
 class LoginWebViewScaffold extends StatefulWidget {
   // TODO: THIS IS REALLY STUPID WE PASS TROUGH TWO WIDGETS UNIFY EM!
+  // FIXME: The above thingy!
   final String uri;
 
   const LoginWebViewScaffold({super.key, required this.uri});

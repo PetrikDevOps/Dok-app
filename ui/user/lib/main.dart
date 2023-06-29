@@ -1,7 +1,9 @@
-import 'dart:developer' as developer;
+// Cupertino for the widgets.
 import 'package:flutter/cupertino.dart';
+// For colors and some special buttons.
 import 'package:flutter/material.dart';
 import 'package:user/auth.dart';
+// The pages
 import 'package:user/pages/home/home.dart';
 import 'package:user/pages/news/news.dart';
 import 'package:user/pages/profile/profile.dart';
