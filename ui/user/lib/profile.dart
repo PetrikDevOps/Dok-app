@@ -5,7 +5,7 @@ import 'package:user/glob.dart' as glob;
 // TODO: Use the cookie
 Future<String> getPfp(String cookie) async {
   try {
-    final response = await http.post(Uri.parse('${glob.appUrl}pfp'));
+    final response = await http.get(Uri.parse('${glob.appUrl}pfp'));
 
     if (response.statusCode == 200) {
       return response.body;
@@ -13,6 +13,20 @@ Future<String> getPfp(String cookie) async {
       return 'Request failed with status: ${response.statusCode}';
     }
   } catch (e) {
-    return 'Errpr: $e';
+    return 'Error: $e';
+  }
+}
+
+// Get the userData for the currently logged in user!
+// TODO: Retrun the struct containing the userdata
+Future<String> getUserData(String cookie) async {
+  try {
+    final response = await http.get(Uri.parse('${glob.appUrl}userdata'));
+
+    if (response.statusCode == 200) {
+      return response.body
+    }
+  } catch (e) {
+    return 'Error: $e';
   }
 }
