@@ -1,3 +1,5 @@
+import 'glob.dart' as glob;
+
 // Import http for requests
 import 'package:http/http.dart' as http;
 
@@ -9,7 +11,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 Future<String> getLoginUrl() async {
   // Attempt to get a login url from the backend.
   try {
-    final response = await http.post(Uri.parse('http://10.0.2.2:5000/login'));
+    final response = await http.post(Uri.parse('${glob.appUrl}login'));
 
     if (response.statusCode == 200) {
       return response.body;

@@ -24,7 +24,9 @@ Future<String> getUserData(String cookie) async {
     final response = await http.get(Uri.parse('${glob.appUrl}userdata'));
 
     if (response.statusCode == 200) {
-      return response.body
+      return response.body;
+    } else {
+      return 'Request failed with status: ${response.statusCode}';
     }
   } catch (e) {
     return 'Error: $e';
