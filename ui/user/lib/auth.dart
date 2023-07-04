@@ -35,13 +35,7 @@ class LoginWebViewScaffold extends StatefulWidget {
 class _LoginWebViewScaffoldState extends State<LoginWebViewScaffold> {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: Flex(
-        direction: Axis.vertical,
-        children: [
-          Expanded(
-            child: WebViewWidget(
-              controller: WebViewController()
+    WebViewController controller = WebViewController()
                 ..setJavaScriptMode(JavaScriptMode.unrestricted)
                 ..setBackgroundColor(CupertinoColors.systemBackground)
                 ..setNavigationDelegate(
@@ -50,7 +44,9 @@ class _LoginWebViewScaffoldState extends State<LoginWebViewScaffold> {
                       // Update loading bar.
                     },
                     onPageStarted: (String url) {},
-                    onPageFinished: (String url) {},
+                    onPageFinished: (String url) {
+                      
+                    },
                     onWebResourceError: (WebResourceError error) {},
                     onNavigationRequest: (NavigationRequest request) {
                       if (request.url.startsWith('https://www.youtube.com/')) {
@@ -60,7 +56,19 @@ class _LoginWebViewScaffoldState extends State<LoginWebViewScaffold> {
                     },
                   ),
                 )
-                ..loadRequest(Uri.parse(widget.uri)),
+                ..loadRequest(Uri.parse(widget.uri));
+
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.systemBackground,
+        middle: Text('Login'),
+      ),
+      child: Flex(
+        direction: Axis.vertical,
+        children: [
+          Expanded(
+            child: WebViewWidget(
+              controller: controller
             ),
           ),
         ],
