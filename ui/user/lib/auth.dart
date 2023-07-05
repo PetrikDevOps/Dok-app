@@ -49,7 +49,7 @@ class _LoginWebViewScaffoldState extends State<LoginWebViewScaffold> {
                     },
                     onWebResourceError: (WebResourceError error) {},
                     onNavigationRequest: (NavigationRequest request) {
-                      if (request.url.startsWith('https://www.youtube.com/')) {
+                      if (!request.url.startsWith('https://login.mirosoftonline.com/') && !request.url.startsWith('https://app.vincus.me')) {
                         return NavigationDecision.prevent;
                       }
                       return NavigationDecision.navigate;
