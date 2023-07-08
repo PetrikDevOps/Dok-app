@@ -7,6 +7,13 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart' as webview;
 
+Future<String> getSession(webview.CookieManager cookieManager) async {
+  webview.Cookie? cookie = await cookieManager.getCookie(
+      url: Uri.parse('https://app.vincus.me'), name: 'session');
+
+  return cookie?.value;
+}
+
 // Open a web view to login.
 Future<String> getLoginUrl() async {
   // Attempt to get a login url from the backend.
@@ -35,6 +42,22 @@ class LoginWebView extends StatefulWidget {
 class _LoginWebViewState extends State<LoginWebView> {
   @override
   Widget build(BuildContext context) {
-    return webview.InAppWebView(initialUrlRequest: webview.URLRequest(url: Uri.parse(widget.loginUrl)));
+    webview.CookieManager cookieManager = webview.CookieManager.instance();
+
+    return Column(
+      children: [
+        FutureBuilder<String>(
+          future: getSession(cookieManager),
+          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+          if (!snapshot.hasData) {
+            return Text('loading...');
+          } else {
+            return snapshot.data == null ? Text('Cookie does not exist') : Text(snapshot.data!);
+          }
+        }),
+        webview.InAppWebView(
+            initialUrlRequest: webview.URLRequest(url: Uri.parse(widget.loginUrl))),
+      ],
+    );
   }
 }
