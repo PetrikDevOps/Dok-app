@@ -7,8 +7,11 @@ import 'package:user/auth.dart';
 import 'package:user/pages/home/home.dart';
 import 'package:user/pages/news/news.dart';
 import 'package:user/pages/profile/profile.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart' as webview;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const App());
 }
 
@@ -65,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ElevatedButton.icon(
                   onPressed: () async {
                     String loginUrl = await getLoginUrl();
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => LoginWebViewScaffold(uri: loginUrl)));
+                    Navigator.push(context, CupertinoPageRoute(builder: (context) => LoginWebView(loginUrl: loginUrl)));
                     login();
                   },
                   style: ElevatedButton.styleFrom(

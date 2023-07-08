@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 // Import Cupertino for the widgets and webview for opening the login page provided by the backend.
 import 'package:flutter/cupertino.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart' as webview;
 
 // Open a web view to login.
 Future<String> getLoginUrl() async {
@@ -23,56 +23,18 @@ Future<String> getLoginUrl() async {
   }
 }
 
-class LoginWebViewScaffold extends StatefulWidget {
-  final String uri;
+class LoginWebView extends StatefulWidget {
+  final String loginUrl;
 
-  const LoginWebViewScaffold({super.key, required this.uri});
+  const LoginWebView({super.key, required this.loginUrl});
 
   @override
-  State<LoginWebViewScaffold> createState() => _LoginWebViewScaffoldState();
+  State<LoginWebView> createState() => _LoginWebViewState();
 }
 
-class _LoginWebViewScaffoldState extends State<LoginWebViewScaffold> {
+class _LoginWebViewState extends State<LoginWebView> {
   @override
   Widget build(BuildContext context) {
-    WebViewController controller = WebViewController()
-                ..setJavaScriptMode(JavaScriptMode.unrestricted)
-                ..setBackgroundColor(CupertinoColors.systemBackground)
-                ..setNavigationDelegate(
-                  NavigationDelegate(
-                    onProgress: (int progress) {
-                      // Update loading bar.
-                    },
-                    onPageStarted: (String url) {},
-                    onPageFinished: (String url) {
-                      
-                    },
-                    onWebResourceError: (WebResourceError error) {},
-                    onNavigationRequest: (NavigationRequest request) {
-                      if (!request.url.startsWith('https://login.mirosoftonline.com/') && !request.url.startsWith('https://app.vincus.me')) {
-                        return NavigationDecision.prevent;
-                      }
-                      return NavigationDecision.navigate;
-                    },
-                  ),
-                )
-                ..loadRequest(Uri.parse(widget.uri));
-
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        backgroundColor: CupertinoColors.systemBackground,
-        middle: Text('Login'),
-      ),
-      child: Flex(
-        direction: Axis.vertical,
-        children: [
-          Expanded(
-            child: WebViewWidget(
-              controller: controller
-            ),
-          ),
-        ],
-      ),
-    );
+    return webview.InAppWebView(initialUrlRequest: webview.URLRequest(url: Uri.parse(widget.loginUrl)));
   }
 }
