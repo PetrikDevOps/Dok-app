@@ -3,6 +3,8 @@ import 'glob.dart' as glob;
 // Import http for requests
 import 'package:http/http.dart' as http;
 
+import 'glob.dart' as glob;
+
 // Import Cupertino for the widgets and webview for opening the login page provided by the backend.
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart' as webview;
@@ -42,12 +44,11 @@ class LoginWebView extends StatefulWidget {
 class _LoginWebViewState extends State<LoginWebView> {
   @override
   Widget build(BuildContext context) {
-    webview.CookieManager cookieManager = webview.CookieManager.instance();
-
-    return Column(
+    return Flex(
+      direction: Axis.vertical,
       children: [
         FutureBuilder<String>(
-          future: getSession(cookieManager),
+          future: getSession(glob.cookieManager),
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
           if (!snapshot.hasData) {
             return Text('loading...');
@@ -55,8 +56,10 @@ class _LoginWebViewState extends State<LoginWebView> {
             return snapshot.data == null ? Text('Cookie does not exist') : Text(snapshot.data!);
           }
         }),
-        webview.InAppWebView(
-            initialUrlRequest: webview.URLRequest(url: Uri.parse(widget.loginUrl))),
+        Expanded(
+            child: webview.InAppWebView(
+                initialUrlRequest: webview.URLRequest(url: Uri.parse(widget.loginUrl))),
+        ),
       ],
     );
   }
