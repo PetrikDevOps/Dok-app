@@ -11,7 +11,9 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart' as webview;
 
 Future<String> getSession(webview.CookieManager cookieManager) async {
   webview.Cookie? cookie = await cookieManager.getCookie(
-      url: Uri.parse('https://app.vincus.me'), name: 'session');
+    url: Uri.parse('https://app.vincus.me'),
+    name: 'session',
+  );
 
   return cookie?.value;
 }
@@ -20,7 +22,9 @@ Future<String> getSession(webview.CookieManager cookieManager) async {
 Future<String> getLoginUrl() async {
   // Attempt to get a login url from the backend.
   try {
-    final response = await http.post(Uri.parse('${glob.appUrl}login'));
+    final response = await http.post(
+      Uri.parse('${glob.appUrl}login'),
+    );
 
     if (response.statusCode == 200) {
       return response.body;
@@ -48,17 +52,20 @@ class _LoginWebViewState extends State<LoginWebView> {
       direction: Axis.vertical,
       children: [
         FutureBuilder<String>(
-          future: getSession(glob.cookieManager),
-          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-          if (!snapshot.hasData) {
-            return Text('loading...');
-          } else {
-            return snapshot.data == null ? Text('Cookie does not exist') : Text(snapshot.data!);
-          }
-        }),
+            future: getSession(glob.cookieManager),
+            builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+              if (!snapshot.hasData) {
+                return Text('loading...');
+              } else {
+                return snapshot.data == null
+                    ? Text('Cookie does not exist')
+                    : Text(snapshot.data!);
+              }
+            }),
         Expanded(
-            child: webview.InAppWebView(
-                initialUrlRequest: webview.URLRequest(url: Uri.parse(widget.loginUrl))),
+          child: webview.InAppWebView(
+              initialUrlRequest:
+                  webview.URLRequest(url: Uri.parse(widget.loginUrl))),
         ),
       ],
     );
